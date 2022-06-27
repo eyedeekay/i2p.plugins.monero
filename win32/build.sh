@@ -21,11 +21,11 @@ i2p.plugin.native -name=monerod \
 		-autostart=true \
 		-clientname=monerod \
 		-consolename="Monero node over I2P" \
-		-name="monerod-windows" \
+		-name="monerod-win32" \
 		-delaystart="1" \
 		-desc="Monero over I2P" \
 		-exename=monerod.exe \
-		-updateurl="http://idk.i2p/i2p.plugins.monero/monerod-windows.su3" \
+		-updateurl="http://idk.i2p/i2p.plugins.monero/monerod-win32.su3" \
 		-website="http://idk.i2p/i2p.plugins.monero/" \
 		-command="monerod.exe --tx-proxy=127.0.0.1:7952 --anonymous-inbound \"*.i2p,127.0.0.1:18083,100\"" \
 		-license=MIT \
