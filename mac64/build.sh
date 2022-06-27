@@ -10,8 +10,9 @@ cp -v i2ptunnel.config monero-cli-mac64
 cp monero-cli-mac64/monerod .
 VERSION=$(../linux64/monero-cli-linux64/monerod --version | sed 's/.*(\(.*\))/\1/' -)
 rm -vf client.yaml plugin.yaml
-mkdir -p tmp-lin/lib
-cp -rv monero-cli-mac64/* tmp-lin/lib
+mkdir -p tmp/lib
+cp -rv monero-cli-mac64/* tmp/lib
+cp ../i2ptunnel.config tmp/
 i2p.plugin.native -name=monerod \
 		-signer=hankhill19580@gmail.com \
 		-signer-dir=$SIGNER_DIR \
@@ -28,4 +29,4 @@ i2p.plugin.native -name=monerod \
 		-website="http://idk.i2p/i2p.plugins.monero/" \
 		-command="monerod --tx-proxy=127.0.0.1:7952 --anonymous-inbound \"*.i2p,127.0.0.1:18083,100\"" \
 		-license=MIT \
-		-res=./tmp-lin/
+		-res=./tmp/
