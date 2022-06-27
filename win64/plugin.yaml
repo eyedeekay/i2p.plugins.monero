@@ -1,0 +1,25 @@
+name: monerod-windows
+key: ""
+signer: hankhill19580@gmail.com
+version: v0.17.3.2-release
+license: MIT
+date: ""
+author: hankhill19580@gmail.com
+website: http://idk.i2p/i2p.plugins.monero/
+updateURL: http://idk.i2p/i2p.plugins.monero/monerod-windows.su3
+description: Monero over I2P
+consoleLinkName: Monero node over I2P
+consoleLinkURL: ""
+consoleIcon: ""
+consoleIconCode: ""
+minVersion: ""
+maxVersion: ""
+minJava: ""
+minJetty: ""
+maxJetty: ""
+disableStop: false
+dont-start-at-install: false
+restart-at-install: false
+only-update: false
+only-install: false
+signerDirectory: /home/idk/i2p-go-keys/
