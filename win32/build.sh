@@ -2,17 +2,17 @@
 	
 SIGNER_DIR="$HOME/i2p-go-keys/"
 
-wget -c -O monero-win64.zip https://downloads.getmonero.org/cli/win64
-unzip monero-win64.zip -d monero-cli-win64
-mv monero-cli-win64/*/* monero-cli-win64/
+wget -c -O monero-win32.zip https://downloads.getmonero.org/cli/win32
+unzip monero-win32.zip -d monero-cli-win32
+mv monero-cli-win32/*/* monero-cli-win32/
 
-cp -v i2ptunnel.config monero-cli-win64
+cp -v i2ptunnel.config monero-cli-win32
 
 VERSION=$(../linux64/monero-cli-linux64/monerod --version | sed 's/.*(\(.*\))/\1/' -)
-cp monero-cli-win64/monerod.exe .
+cp monero-cli-win32/monerod.exe .
 rm -vf client.yaml plugin.yaml
-mkdir -p tmp-win64/lib
-cp -rv monero-cli-win64/* tmp-win64/lib
+mkdir -p tmp-win32/lib
+cp -rv monero-cli-win32/* tmp-win32/lib
 i2p.plugin.native -name=monerod \
 		-signer=hankhill19580@gmail.com \
 		-signer-dir=$SIGNER_DIR \
@@ -29,4 +29,4 @@ i2p.plugin.native -name=monerod \
 		-website="http://idk.i2p/i2p.plugins.monero/" \
 		-command="monerod.exe --tx-proxy=127.0.0.1:7952 --anonymous-inbound \"*.i2p,127.0.0.1:18083,100\"" \
 		-license=MIT \
-		-res=./tmp-win64/
+		-res=./tmp-win32/
